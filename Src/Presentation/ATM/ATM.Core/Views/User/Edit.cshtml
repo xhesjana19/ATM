@@ -1,0 +1,49 @@
+﻿@model ATM.Core.Services.Users.UpdateUserRequest
+@using ATM.Core.Domain.Users
+
+@{
+    Layout = "_Layout";
+}
+<div class="container-fluid px-4">
+    <form asp-action="UpdateUser" asp-controller="User" method="POST" class="form-group bmd-form-group"
+          data-ajax-complete="completedEditingUser">
+        <div class="card-body">
+            <input asp-for="Id" type="hidden" />
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div class="row">
+                    <div class="form-group">
+                        <label class="font-label">Name</label><span class="required-field">*</span>
+                        <input asp-for="Name" class="form-control" type="text" maxlength="128">
+                        <span asp-validation-for="Name" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-label">Email</label><span class="required-field">*</span>
+                        <input asp-for="Username" type="email" class="form-control" type="text" maxlength="128">
+                        <span asp-validation-for="Username" class="form-text text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-label">Role</label><span class="required-field">*</span>
+                        <select asp-for="Role" class="form-control" asp-items="@Html.GetEnumSelectList<UserRole>()"></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-label"> Change Password </label><span class="required-field">*</span>
+                        <input asp-for="Password" type="password" class="form-control" placeholder=" Change Password" autofocus autocomplete="off" />
+                        <span asp-validation-for="Password" class="form-text text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-label">Confirm Password</label><span class="required-field">*</span>
+                        <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm Password" autofocus autocomplete="off" />
+                        <span asp-validation-for="ConfirmPassword" class="form-text text-danger"></span>
+                    </div>
+                </div>
+                <br />
+                <div style="float:right">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a class="btn btn-secondary" href="@Url.Action("Index", "User")">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<br />

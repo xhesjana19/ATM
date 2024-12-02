@@ -1,0 +1,29 @@
+﻿@model ATM.Core.Services.UsersAccount.UserAccountModel
+@{
+    Layout = "_Layout";
+}
+<div class="container-fluid px-4">
+    <form asp-action="Create" asp-controller="UserAccount" method="POST" class="form-group bmd-form-group">
+        <div class="card-body">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div class="form-group">
+                    <label class="font-label">Name</label><span class="required-field">*</span>
+                   <input asp-for="Name" class="form-control" ReadOnly="true"/>    
+                </div>
+                <div class="form-group">
+                    <label class="font-label">Amount</label><span class="required-field">*</span>
+                    <input asp-for="UserId" type="hidden">
+                    <input asp-for="Amount" type="number" class="form-control" autocomplete="off">
+                    <span asp-validation-for="Amount" class="form-text text-danger"></span>
+                </div>
+                <br />
+                <div style="float:right">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                   <a class="btn btn-secondary" href="@Url.Action("Index", "User")">Cancel</a> 
+               </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+<br />

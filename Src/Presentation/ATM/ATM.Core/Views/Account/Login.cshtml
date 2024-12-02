@@ -1,0 +1,58 @@
+﻿@model ATM.Core.Services.Authentication.AuthenticationRequest
+@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author">
+    <title>@ViewData["Title"] - ATM</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" asp-append-version="true" />
+    <!-- Custom styles for this template -->
+    <style>
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body class="text-center">
+
+    <form class="form-signin" method="post">
+
+
+        <h1 class="text-info">Login</h1>
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div>
+            <input asp-for="Username" type="email" class="form-control" placeholder="Email" autofocus>
+        </div>
+
+        <div>
+            <input asp-for="Password" type="password" class="form-control" placeholder="Fjalëkalimi" autofocus>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input asp-for="RememberMe" type="checkbox"> Ruaj të dhënat
+            </label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Hyr</button>
+
+    </form>
+
+</body>
+</html>

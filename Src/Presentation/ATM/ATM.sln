@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{CC9D5884-9FCB-4F73-8406-C5826D8842AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{B372D1A7-776D-4A27-949C-B9AC7E0F8EB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{9DD6E440-0EFA-469D-BE55-05D82950AA7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM.Web", "ATM.Core\ATM.Web.csproj", "{FBAA66E4-118B-4E3A-A930-4AD9EA33CE9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM.Core", "..\..\Library\ATM.Core\ATM.Core.csproj", "{07379A4D-6C46-4142-A2D6-62E9BBE7C9D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBAA66E4-118B-4E3A-A930-4AD9EA33CE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBAA66E4-118B-4E3A-A930-4AD9EA33CE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBAA66E4-118B-4E3A-A930-4AD9EA33CE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBAA66E4-118B-4E3A-A930-4AD9EA33CE9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07379A4D-6C46-4142-A2D6-62E9BBE7C9D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07379A4D-6C46-4142-A2D6-62E9BBE7C9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07379A4D-6C46-4142-A2D6-62E9BBE7C9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07379A4D-6C46-4142-A2D6-62E9BBE7C9D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B372D1A7-776D-4A27-949C-B9AC7E0F8EB9} = {CC9D5884-9FCB-4F73-8406-C5826D8842AD}
+		{9DD6E440-0EFA-469D-BE55-05D82950AA7F} = {CC9D5884-9FCB-4F73-8406-C5826D8842AD}
+		{FBAA66E4-118B-4E3A-A930-4AD9EA33CE9A} = {9DD6E440-0EFA-469D-BE55-05D82950AA7F}
+		{07379A4D-6C46-4142-A2D6-62E9BBE7C9D3} = {B372D1A7-776D-4A27-949C-B9AC7E0F8EB9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C605624-8F7C-418C-8A25-8F607B484CF3}
+	EndGlobalSection
+EndGlobal

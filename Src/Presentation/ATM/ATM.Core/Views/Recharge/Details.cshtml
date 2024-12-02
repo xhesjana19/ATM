@@ -1,0 +1,59 @@
+﻿@model ATM.Core.Services.RechargeATM.RechargeModel
+@{
+    ViewData["Title"] = "Recharge ATM";
+    Layout = "_Layout";
+}
+@{
+    await Html.RenderPartialAsync("_LinksPartial");
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+<div class="container-fluid px-4">
+    <h1 class="mt-4">ATM</h1>
+
+    <div style="text-align: end">
+        <a class="btn btn-primary" href="@Url.Action("Create", "Recharge", new{ atmId = @Model.AtmId, name = @Model.Name})">
+            <i class="fa fa-plus-square"></i> Add Banknotes
+        </a>
+    </div>
+    <br />
+    <div class="card mb-4">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <i class="fas fa-table me-1"></i>
+                    ATM Details
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0">
+                    <tr style="text-align:center;">
+                        <th>Name</th>
+                        <th>Banknotes 5000</th>
+                        <th>Banknotes 2000</th>
+                        <th>Banknotes 1000</th>
+                        <th>Banknotes 500</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">@Model.Name</td>
+                        <td style="text-align:center;">@Model.Banknotes5000</td>
+                        <td style="text-align:center;">@Model.Banknotes2000</td>
+                        <td style="text-align:center;">@Model.Banknotes1000</td>
+                        <td style="text-align:center;">@Model.Banknotes500</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <span>Total Amount:</span> @Model.Total <span>ALL</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+@{
+    await Html.RenderPartialAsync("_ScriptsPartial");
+ }
+}

@@ -1,0 +1,32 @@
+﻿@model ATM.Core.Services.ATMWithdrawals.ATMWithdrawalsModel
+@{
+    Layout = "_Layout";
+}
+<div class="container-fluid px-4">
+    <form asp-action="Create" asp-controller="ATMWithdrawals" method="POST" class="form-group bmd-form-group">
+        <div class="card-body">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div class="form-group">
+                    <label class="font-label">ATM</label><span class="required-field">*</span>
+                    <select asp-for="AtmId" class="form-control" name="AtmId" asp-items="Model.AllATMList">
+                        <option disabled selected>--- Select ATM ---</option>
+                    </select>
+                    <span asp-validation-for="AtmId" class="form-text text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="UserId" type="hidden" />
+                    <label class="font-label">Amount</label>
+                    <input asp-for="AmountSet" class="form-control" type="number">
+                    <span asp-validation-for="AmountSet" class="form-text text-danger"></span>
+                </div>
+                <br />
+                <div style="float:right">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a class="btn btn-secondary" href="@Url.Action("Index", "ATMWithdrawals", new{id = @Model.UserId})">Cancel</a>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+<br />
